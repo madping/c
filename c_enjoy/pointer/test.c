@@ -45,11 +45,11 @@ struct tm *t_ptr = (void *)0x10000;
 
 // 다음과 같이 정의 하여도 된다.
 /*
-void *v_ptr=(void *)0x10000;
-char *c_ptr=(char *)v_ptr;
-int *i_ptr=(int *)v_ptr;
-struct tm *t_ptr=(void *)v_ptr;
-*/
+   void *v_ptr=(void *)0x10000;
+   char *c_ptr=(char *)v_ptr;
+   int *i_ptr=(int *)v_ptr;
+   struct tm *t_ptr=(void *)v_ptr;
+   */
 
 int (*callback)(int, char *);
 //callback 이라는 포인터 변수는 데이터가 있는
@@ -57,16 +57,16 @@ int (*callback)(int, char *);
 //그 함수의 모양은 return 값이 int형이고 int와 char *를 입력으로 받는 함수
 int foo(int num, char *name)
 {
-    int i;
-    for (i = 0; i < num; i++)
-        printf(name);
-    return i;
+        int i;
+        for (i = 0; i < num; i++)
+                printf(name);
+        return i;
 }
 
 int main(void)
 {
-    callback = foo;
-    callback(2, "han\n");
+        callback = foo;
+        callback(2, "han\n");
 
-    return 0;
+        return 0;
 }
